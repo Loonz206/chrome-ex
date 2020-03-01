@@ -2,10 +2,9 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Code Style](https://badgen.net/badge/code%20style/airbnb/ff5a5f?icon=airbnb)](https://github.com/airbnb/javascript)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![Greenkeeper badge](https://badges.greenkeeper.io/Loonz206/chrome-ex.svg)](https://greenkeeper.io/)
 
 ### Chrome Ex
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/Loonz206/chrome-ex.svg)](https://greenkeeper.io/)
 
 ---
 
