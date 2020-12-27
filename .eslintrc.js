@@ -1,26 +1,27 @@
 module.exports = {
   env: {
     browser: true,
-    es6: true,
+    es2021: true,
+    jest: true
   },
   extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'plugin:prettier/recommended'
+    "plugin:react/recommended",
+    "standard",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended"
   ],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-  },
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
-    ecmaVersion: 2018,
-    sourceType: 'module',
+    ecmaVersion: 12,
+    sourceType: "module"
   },
-  plugins: [
-    'react',
-  ],
+  plugins: ["react"],
   rules: {},
+  settings: {
+    react: {
+      version: "detect"
+    }
+  }
 };
