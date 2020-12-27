@@ -1,8 +1,7 @@
-[![Build Status](https://travis-ci.org/Loonz206/chrome-ex.svg?branch=master)](https://travis-ci.org/Loonz206/chrome-ex)
+![Node.js CI](https://github.com/Loonz206/chrome-ex/workflows/Node.js%20CI/badge.svg)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![Code Style](https://badgen.net/badge/code%20style/airbnb/ff5a5f?icon=airbnb)](https://github.com/airbnb/javascript)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![Greenkeeper badge](https://badges.greenkeeper.io/Loonz206/chrome-ex.svg)](https://greenkeeper.io/)
 
 ### Chrome Ex
 

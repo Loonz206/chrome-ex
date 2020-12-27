@@ -1,24 +1,21 @@
-/* eslint-disable prettier/prettier */
-const path = require('path');
-const {
-  CleanWebpackPlugin
-} = require('clean-webpack-plugin');
+const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  devtool: 'cheap-module-source-map',
+  devtool: "cheap-module-source-map",
   entry: "./src/index.jsx",
   resolve: {
     extensions: [".js", ".jsx"]
   },
   devServer: {
-    contentBase: './dist'
+    contentBase: "./dist"
   },
   module: {
-    // eslint-disable-next-line prettier/prettier
-    rules: [{
+    rules: [
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
@@ -27,10 +24,11 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        // eslint-disable-next-line prettier/prettier
-        use: [{
-          loader: "html-loader"
-        }]
+        use: [
+          {
+            loader: "html-loader"
+          }
+        ]
       },
       {
         test: /\.s[ac]ss$/i,
@@ -45,15 +43,13 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        include: path.resolve(__dirname, 'src'),
-        use: [
-          'file-loader'
-        ]
+        include: path.resolve(__dirname, "src"),
+        use: ["file-loader"]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        include: path.resolve(__dirname, 'src'),
-        use: ['file-loader']
+        include: path.resolve(__dirname, "src"),
+        use: ["file-loader"]
       }
     ]
   },
@@ -71,22 +67,26 @@ module.exports = {
       manifest: "manifest.json",
       hash: true
     }),
-    new CopyWebpackPlugin([{
-        from: './src/manifest.json',
-        to: './',
-        flatten: true
-      },
+    new CopyWebpackPlugin(
+      [
+        {
+          from: "./src/manifest.json",
+          to: "./",
+          flatten: true
+        },
+        {
+          from: "./src/assets/img/icons/*",
+          to: "./",
+          flatten: true
+        }
+      ],
       {
-        from: './src/assets/img/icons/*',
-        to: './',
-        flatten: true
+        copyUnmodified: true
       }
-    ], {
-      copyUnmodified: true
-    })
+    )
   ],
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist")
   }
 };
