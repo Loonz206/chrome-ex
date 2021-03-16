@@ -1,17 +1,18 @@
 const path = require("path");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  devtool: "cheap-module-source-map",
-  entry: "./src/index.jsx",
-  resolve: {
-    extensions: [".js", ".jsx"]
-  },
   devServer: {
-    contentBase: "./dist"
+    contentBase: path.join(__dirname, "dist"),
+    compress: true,
+    port: 9000
+  },
+  output: {
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist")
   },
   module: {
     rules: [
@@ -22,71 +23,28 @@ module.exports = {
           loader: "babel-loader"
         }
       },
+      // Images
       {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader"
-          }
-        ]
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+        type: "asset/resource"
       },
+      // Fonts and SVGs
       {
-        test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          "style-loader",
-          // Translates CSS into CommonJS
-          "css-loader",
-          // Compiles Sass to CSS
-          "sass-loader"
-        ]
+        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        type: "asset/inline"
       },
+      // CSS, PostCSS, and Sass
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        include: path.resolve(__dirname, "src"),
-        use: ["file-loader"]
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        include: path.resolve(__dirname, "src"),
-        use: ["file-loader"]
+        test: /\.(scss|css)$/,
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
       }
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html",
-      title: "boilerplate", // change this to your app title
-      meta: {
-        charset: "utf-8",
-        viewport: "width=device-width, initial-scale=1, shrink-to-fit=no",
-        "theme-color": "#000000"
-      },
-      manifest: "manifest.json",
-      hash: true
+      template: "src/index.html"
     }),
-    new CopyWebpackPlugin(
-      [
-        {
-          from: "./src/manifest.json",
-          to: "./",
-          flatten: true
-        },
-        {
-          from: "./src/assets/img/icons/*",
-          to: "./",
-          flatten: true
-        }
-      ],
-      {
-        copyUnmodified: true
-      }
-    )
-  ],
-  output: {
-    filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dist")
-  }
+    new webpack.HotModuleReplacementPlugin(),
+    new CleanWebpackPlugin()
+  ]
 };
