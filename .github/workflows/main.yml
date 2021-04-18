@@ -48,9 +48,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install --save-dev codecov
+      - run: npm install
       - run: npm run test
       - run: npm run coverage
-      - run: ./node_modules/.bin/codecov
-      - run: |
-          cat codecov.yml | curl --data-binary @- https://codecov.io/validate
