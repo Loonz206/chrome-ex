@@ -71,7 +71,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "sass": "^1.38.2",
-    "snyk": "^1.687.0"
+    "snyk": "^1.695.0"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
