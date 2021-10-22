@@ -70,8 +70,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "snyk": "^1.696.0",
-    "sass": "^1.41.1"
+    "sass": "^1.41.1",
+    "snyk": "^1.717.0"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
