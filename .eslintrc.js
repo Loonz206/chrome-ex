@@ -10,7 +10,8 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
     "plugin:security/recommended",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "plugin:sonarjs/recommended"
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -19,7 +20,14 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: "module"
   },
-  plugins: ["react"],
+  plugins: [
+    "react",
+    "sonarjs",
+    "react-hooks",
+    "prettier",
+    "security",
+    "jsx-a11y"
+  ],
   rules: {},
   settings: {
     react: {

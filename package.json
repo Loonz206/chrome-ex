@@ -48,6 +48,7 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^3.0.0",
     "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-sonarjs": "^0.10.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
     "husky": "^4.2.3",
@@ -70,7 +71,6 @@
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "sass": "^1.43.2",
     "sass": "^1.41.1",
     "snyk": "^1.733.0"
   },
