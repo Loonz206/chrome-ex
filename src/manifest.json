@@ -2,5 +2,9 @@
   "manifest_version": 3,
   "name": "Getting Started Example",
   "description": "Build an Extension!",
-  "version": "1.0"
+  "version": "1.0",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage"]
 }

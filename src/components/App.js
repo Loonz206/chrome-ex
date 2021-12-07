@@ -1,9 +1,10 @@
 import React from "react";
 
 const App = () => {
+  const greeting = "Hello Chrome Extension!";
   return (
     <div>
-      <h1>Hello Lenny</h1>
+      <h1>{greeting}</h1>
     </div>
   );
 };
